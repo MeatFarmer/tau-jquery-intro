@@ -22,7 +22,7 @@
 	- on only works for js native, not jquery events:
 	-[http://www.w3schools.com/jsref/dom_obj_event.asp](http://www.w3schools.com/jsref/dom_obj_event.asp)
 	- [https://api.jquery.com/category/events/](https://api.jquery.com/category/events/)
-  6. add the get and append to DOM functions with the get amount
-  7. simple example of this and traversing DOM
-  8. add data attribute to the p tags, mention the .attr("attribute", value)
-  9. animation
+6. add the get and append to DOM functions with the get amount
+7. simple example of this and traversing DOM
+8. add data attribute to the p tags, mention the .attr("attribute", value)
+9. animation
