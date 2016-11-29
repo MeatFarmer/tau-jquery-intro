@@ -19,17 +19,11 @@ $(document).ready(function() {
     $('#outputDiv').parent().toggleClass('hoverClass');
   });
 
-  // $('#containerName').on('keyup', function() {
-  //   console.log('input field');
-  // });
-
-  //selectFill
-  //selectCapacity
-  //calcAmount
+  $('#containerName').on('keyup', function() {
+    console.log('input field');
+  });
 
   // -- Calculate Amount -- //
-  // append to the dom - output
-
   $('#calcAmount').on('click', function() {
     console.log('calc amount clicked');
     var capacity = $('#selectCapacity').val();
@@ -46,10 +40,14 @@ $(document).ready(function() {
   });
 });
 
+// js function to calculate the amount
+// can be outside the document ready
 function calcAmount(fillParam, capacityParam) {
   return fillParam * capacityParam;
 }
 
+// this event will not be attached bc it is
+// outside the document ready.
 $('#notReadyButton').on('click', function() {
   console.log('not ready button clicked');
 });
