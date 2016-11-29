@@ -1,5 +1,8 @@
 console.log('test test');
 
+// global vars
+var counter = 0;
+
 $(document).ready(function() {
   console.log('document ready');
 
@@ -25,18 +28,35 @@ $(document).ready(function() {
 
   // -- Calculate Amount -- //
   $('#calcAmount').on('click', function() {
-    console.log('calc amount clicked');
+    counter++;
+    // get values off the DOM
     var capacity = $('#selectCapacity').val();
     var fill = $('#selectFill').val();
-    var container = $('#containerName').val();
+    var item = $('#containerName').val();
 
-    console.log('capacity =', capacity, 'fill =', fill, 'container =', container);
-    console.log('the amount =', calcAmount(fill, capacity));
+    console.log('the capacity =', capacity, ' the fill =', fill, ' the item = ', item);
 
-    var amount = calcAmount(fill, capacity);
-    var toAppend = "Container: " + container + " has a capacity of: " + capacity + " and is " + fill + "full . Amount " + amount;
-    $('#outputDiv').append('<p>' + toAppend + '</p>');
+    var amount = calcAmount(capacity, fill);
 
+    //-- TRY IT: animate in and out the whole outputDiv
+    // $('#outputDiv').fadeOut(600, function() {
+    //   var currentUpdate = "Item: " + item + "(count:" + counter + ") has a capacity of " + capacity + " and is " + fill + " full. Amount: " + amount;
+    //   $('#outputDiv').append( '<p>' + currentUpdate + '</p>');
+    //   $("#outputDiv").fadeIn(600);
+    // });
+
+    //-- TRY IT: animate the append so that it fades in
+    var currentUpdate = "Item: " + item + "(count:" + counter + ") has a capacity of " + capacity + " and is " + fill + " full. Amount: " + amount;
+    var pElement = $('<p>' + currentUpdate +'</p>');
+    pElement.hide().appendTo('#outputDiv').fadeIn('slow');
+
+    //-- TRY IT: test that we can set and retrieve something from .data
+    // We are doning nothing with .data here other than logging it.
+    pElement.data('count', counter); // set the count
+    $('#outputDiv').children().each(function(i, el) {
+      console.log('type of ', typeof el);
+      console.log('el data = ', $(this).data('count'));
+    });
   });
 });
 
