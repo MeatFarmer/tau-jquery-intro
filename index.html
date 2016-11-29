@@ -8,6 +8,23 @@
   <body>
     <button id="readyButton" class="clickButton" type="button" name="button">Ready</button>
     <button id="notReadyButton" class="clickButton" type="button" name="button">Not Ready</button>
-    <input id="containerName" type="text" name="" value="">
+
+    <div class="container">
+      <input id="containerName" type="text" name="" value="">
+      <select id="selectFill">
+        <option value="0">Empty</option>
+        <option value=".25">Quater</option>
+        <option value=".5">Half Full</option>
+        <option value=".75">Three Quarters Full</option>
+        <option value="1">Full</option>
+      </select>
+      <select id="selectCapacity">
+        <option>3</option>
+        <option>45</option>
+        <option>100</option>
+      </select>
+      <button id="calcAmount" type="button" name="button">Calc Amount</button>
+      <div id="outputDiv"></div>
+    </div>
   </body>
 </html>
