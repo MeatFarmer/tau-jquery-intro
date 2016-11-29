@@ -11,6 +11,12 @@ $(document).ready(function() {
   //select an class w/.
   $('.clickButton').hover(function() {
     console.log('hovered over a button');
+    // console.log($(this));
+    // $('.clickButton').toggleClass('toggleButton');
+
+    $(this).toggleClass('toggleButton');
+
+    $('#outputDiv').parent().toggleClass('hoverClass');
   });
 
   // $('#containerName').on('keyup', function() {
@@ -40,8 +46,8 @@ $(document).ready(function() {
   });
 });
 
-function calcAmount(fill, capacity) {
-  return fill * capacity;
+function calcAmount(fillParam, capacityParam) {
+  return fillParam * capacityParam;
 }
 
 $('#notReadyButton').on('click', function() {

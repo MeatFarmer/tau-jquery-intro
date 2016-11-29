@@ -10,8 +10,8 @@
 - appending to the DOM
 - traversing DOM
 - $(this)
-- attribute (data)
-- animation (brief)
+- attribute (data) .attr / .data
+- animation (brief) fadeOut / fadeIn
 
 ### Steps
 1. create index and source the js file
